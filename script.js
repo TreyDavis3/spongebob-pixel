@@ -47,4 +47,59 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+
+
+    // Magic Conch Logic
+    const askConchBtn = document.getElementById('askConchBtn');
+    const conchInput = document.getElementById('conchQuestion');
+    const conchAnswer = document.getElementById('conchAnswer');
+    const conchIcon = document.querySelector('.conch-icon');
+
+    async function askTheConch() {
+        const question = conchInput.value.trim();
+        if (!question) {
+            alert('You must ask a question!');
+            return;
+        }
+
+        // Animation
+        conchIcon.style.transform = 'scale(0.9) rotate(5deg)';
+        setTimeout(() => {
+            conchIcon.style.transform = '';
+        }, 150);
+
+        try {
+            conchAnswer.classList.remove('visible');
+            conchAnswer.textContent = 'Consulting the shell...';
+            conchAnswer.classList.add('visible');
+
+            const response = await fetch('http://localhost:5000/api/magic-conch', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await response.json();
+
+            // Artificial delay for suspense
+            setTimeout(() => {
+                conchAnswer.textContent = `"${data.answer}"`;
+            }, 800);
+
+        } catch (error) {
+            console.error('Error:', error);
+            conchAnswer.textContent = "The Magic Conch is sleeping (Server Error)";
+        }
+    }
+
+    askConchBtn.addEventListener('click', askTheConch);
+    conchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            askTheConch();
+        }
+    });
+
 });

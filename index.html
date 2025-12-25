@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="bubbles">
         <div class="bubble"></div>
@@ -48,6 +50,25 @@
                 </div>
             </div>
         </section>
+
+        <section class="magic-conch-section">
+            <div class="conch-container">
+                <div class="conch-visual">
+                    <img src="magic_conch.png" alt="Magic Conch Shell" class="conch-icon">
+                    <div class="pull-string"></div>
+                </div>
+                <div class="conch-interface">
+                    <h2 class="conch-title">Ask the Magic Conch</h2>
+                    <p class="conch-subtitle">All hail the Magic Conch!</p>
+                    <div class="input-group">
+                        <input type="text" id="conchQuestion" placeholder="Will I get the Pixel 10?"
+                            class="conch-input">
+                        <button id="askConchBtn" class="conch-btn">Ask</button>
+                    </div>
+                    <div id="conchAnswer" class="conch-answer hidden"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Modal for Patrick Surprise -->
@@ -62,4 +83,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

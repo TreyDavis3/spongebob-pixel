@@ -141,9 +141,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
+    width: 100%;
     position: relative;
     z-index: 10;
     min-height: 100vh;
@@ -156,7 +157,8 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .hero-content {
@@ -164,7 +166,7 @@ body {
 }
 
 .gradient-text {
-    font-size: 5rem;
+    font-size: clamp(3rem, 5vw + 1rem, 6rem);
     font-weight: 900;
     line-height: 1.1;
     background: var(--primary-gradient);
@@ -277,7 +279,8 @@ body {
 
 .image-wrapper {
     position: relative;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 30px;
 }
 
@@ -439,6 +442,13 @@ body {
 
 /* Responsive */
 @media (max-width: 968px) {
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        padding-top: 6rem;
+    }
+
     .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -451,10 +461,142 @@ body {
 
     .image-wrapper {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
     }
 
     .description {
         margin: 0 auto 2rem auto;
+    }
+}
+
+/* Magic Conch Section */
+.magic-conch-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.conch-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.conch-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conch-icon {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(100, 50, 200, 0.3));
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.conch-icon:hover {
+    transform: scale(1.05) rotate(-5deg);
+}
+
+.conch-interface {
+    flex: 1;
+}
+
+.conch-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.conch-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.conch-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.conch-input:focus {
+    border-color: #a78bfa;
+}
+
+.conch-btn {
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 0 2rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
+}
+
+.conch-answer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    min-height: 2rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.conch-answer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .conch-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .conch-btn {
+        padding: 1rem;
     }
 }
