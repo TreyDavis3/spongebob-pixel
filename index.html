@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpongeBob x Pixel 10 Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content fade-in-up">
+                <h1 class="gradient-text">Pixel 10 Pro</h1>
+                <h2 class="subtitle">Bikini Bottom Edition</h2>
+                <p class="description">
+                    So advanced, it's ready for jellyfishing in 8K. <br>
+                    Experience the porous power of the new Tensor G5 chip.
+                </p>
+                <button id="surpriseBtn" class="cta-button">
+                    <span class="btn-text">Find Patrick</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+            <div class="hero-image fade-in-right">
+                <div class="image-wrapper">
+                    <img src="hero.png" alt="SpongeBob amazed by Pixel 10 Pro">
+                    <div class="floating-elements">
+                        <span class="float-icon param-1">📱</span>
+                        <span class="float-icon param-2">🍍</span>
+                        <span class="float-icon param-3">✨</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Patrick Surprise -->
+    <div id="patrickModal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-btn">&times;</span>
+            <img src="patrick.png" alt="Patrick Star Surprise" class="patrick-img">
+            <h3 class="patrick-text">"Is this the Krusty Krab?"</h3>
+            <p class="patrick-subtext">No, this is the Pixel 10 Pro!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
