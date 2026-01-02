@@ -69,6 +69,28 @@
                 </div>
             </div>
         </section>
+
+        <section class="analytics-section">
+            <h2 class="section-title">Bikini Bottom Analytics</h2>
+            <p class="section-subtitle">Data science vs. Kelp science</p>
+            
+            <div class="analytics-container js-tilt">
+                <div class="chart-wrapper">
+                    <img id="analyticsChart" src="http://localhost:5000/api/analytics/chart" alt="Comparison Chart">
+                    <div class="loading-overlay">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                
+                <div class="analytics-controls">
+                    <p class="stat-text">Live performance metrics from the Goo Lagoon Data Center.</p>
+                    <button id="refreshDataBtn" class="cta-button small-btn">
+                        Refresh Data 🔄
+                    </button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Modal for Patrick Surprise -->

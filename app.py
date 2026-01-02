@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import random
+import analytics
+from flask import send_file
 
 app = Flask(__name__)
 CORS(app)
@@ -23,6 +25,12 @@ def ask_conch():
     
     answer = random.choice(CONCH_ANSWERS)
     return jsonify({"answer": answer})
+
+@app.route('/api/analytics/chart')
+def get_chart():
+    img_buf = analytics.generate_comparison_chart()
+    return send_file(img_buf, mimetype='image/png')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
